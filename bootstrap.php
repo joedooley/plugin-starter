@@ -1,16 +1,21 @@
 <?php
 /**
- * Plugin Name: Plugin Starter
- * Description: WordPress starter plugin utilizing webpack and composer autoloading.
- * Version:     1.0.0
- * Author:      Developing Designs
+ * Plugin Name:  Plugin Starter
+ * Plugin URI:   https://developingdesigns.com/
+ * Description:  WordPress starter plugin utilizing webpack and composer autoloading.
+ * Author:       Developing Designs
+ * Author URI:   https://developingdesigns.com/
+ * Version:      1.0.0
+ * Tested up to: 5.2.2
+ * Text Domain:  plugin-starter
+ * Domain Path:  /lang
  *
  * @package     DevDesigns\PluginStarter
  * @author      Developing Designs
  * @since       1.0.0
  */
 
-namespace DevDesigns\PluginStarter;
+use function DevDesigns\PluginStarter\defineConstants;
 
 
 
@@ -24,22 +29,18 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 
-/*
- * Plugin directory.
+/**
+ * Initialize constants.
  *
  * @since 1.0.0
  */
-if ( ! defined( 'PLUGIN_STARTER_VERSION' ) ) {
-	define( 'PLUGIN_STARTER_VERSION', '1.0.0' );
-}
-
-if ( ! defined( 'PLUGIN_STARTER_URL' ) ) {
-	define( 'PLUGIN_STARTER_URL', plugin_dir_url( __FILE__ ) );
+if ( function_exists( 'DevDesigns\PluginStarter\defineConstants' ) ) {
+	defineConstants( '1.0.0', __FILE__ );
 }
 
 
-/*
- * Bootstrap plugin files that aren't autoloaded by composer.
+/**
+ * Bootstrap plugin.
  *
  * @since 1.0.0
  */

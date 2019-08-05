@@ -18,6 +18,12 @@
 			"role": "Company"
 		}
 	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"config": {
@@ -25,14 +31,17 @@
 		"preferred-install": "dist",
 		"sort-packages": true
 	},
+	"require-dev": {
+		"kint-php/kint": "^3.2"
+	},
 	"require": {
-		"php": "^7.2",
+		"php": "^7.3",
 		"composer/installers": "~1.0"
 	},
 	"autoload": {
 		"psr-4": {
 			"DevDesigns\\PluginStarter\\": "src/"
 		},
-		"files": []
+		"files": ["src/setup.php"]
 	}
 }
